@@ -33,11 +33,20 @@ public class LinkedList{
     }
 
     public void addFirst(Object newEntry){
-
+        Node oldRoot = head;
+        Node newNode = new Node(newEntry);
+        if(head == null){
+            head = newNode;
+        }
+        else{
+            head = newNode;
+            newNode.next = oldRoot;
+        }
     }
 
     boolean addLast(Object newEntry){
-        return false;
+        add(newEntry);
+        return true;
     }
     public Object getFirst(){
         if (head == null) {
